@@ -5,14 +5,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Pause::Pause  ; The Pause/Break key.
 #p::Pause  ; Win+P
 ^F10::
-PixelGetColor,color,784,715
+PixelGetColor,color,790,712
 loop
 {
 	
-	PixelSearch, XO, YO, 845, 712, 930, 770, color, 10
+	PixelSearch, XO, YO, 823, 710,826 , 860, color, 25
 	if (!ErrorLevel)
 	{
-		loop,10
+		loop,5
 		{
 		Click
 		sleep,10
