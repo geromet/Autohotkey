@@ -4,11 +4,12 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Pause::Pause  ; The Pause/Break key.
 #p::Pause  ; Win+P
-
 ^F10::
+PixelGetColor,color,784,715
 loop
 {
-	PixelSearch, XO, YO, 845, 712, 930, 770, 0x481213, 32, Fast
+	
+	PixelSearch, XO, YO, 845, 712, 930, 770, color, 10
 	if (!ErrorLevel)
 	{
 		loop,10
@@ -21,6 +22,7 @@ loop
 		Sleep, 2000
 		Click,up
 		Sleep,4500
+		PixelGetColor,color,784,715
 	}
 }
 return
