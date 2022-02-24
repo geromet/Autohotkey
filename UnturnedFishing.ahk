@@ -1,37 +1,42 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-#Include Gdip_All.ahk
-DetectHiddenWindows, On
 
 
 #p::Pause  ; Win+P Pause
 #r::Reload ; Win+R Reload
 #s::	   ; Win+S Start
 
-WinGet, hwnd, ID, Unturned
-ColorVariation = 34
 
-pBitmap:=Gdip_BitmapFromHWND(hwnd)
-color:=Gdip_GetPixel(pBitmap, x, y)
-
+ColorVariation = 35
 
 
 SysGet, VirtualWidth, 78
-SysGet, VirtualHeight, 79
-RodX = 784 * (VirtualWidth/1920)
-RodY = 715 * (VirtualHeight/1080)
-SearchStartX = 823 * (VirtualWidth/1920)
-SearchStartY = 710 * (VirtualHeight/1080)
-SearchSizeX = 3 * (VirtualWidth/1920)
-SearchSizeY = 150 * (VirtualHeight/1080)
+If(VirtualWidth = 1920)
+{
+RodX := 784
+RodY := 715
+SearchStartX := 823
+SearchStartY := 710
+SearchSizeX := 3
+SearchSizeY := 150
+}
+else If(VirtualWidth =1360)
+{
+RodX := 560
+RodY := 500
+SearchStartX := 587
+SearchStartY := 495
+SearchSizeX := 3
+SearchSizeY := 150
+}
+
 
 ; First throw
 Click,down
 Sleep, 2000
-Click,up
+Click,up	
 Sleep,4500
 
 PixelGetColor,color,RodX,RodY ; Set fishing rod color
