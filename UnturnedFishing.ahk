@@ -1,15 +1,22 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#Include Gdip_All.ahk
+DetectHiddenWindows, On
 
 
 #p::Pause  ; Win+P Pause
 #r::Reload ; Win+R Reload
 #s::	   ; Win+S Start
 
+WinGet, hwnd, ID, Unturned
+ColorVariation = 34
 
-ColorVariation = 35
+pBitmap:=Gdip_BitmapFromHWND(hwnd)
+color:=Gdip_GetPixel(pBitmap, x, y)
+
 
 
 SysGet, VirtualWidth, 78
