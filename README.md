@@ -1,0 +1,11 @@
+Autofisher for Unturned.
+
+Only tested on arid, but should work on all maps.
+Does require Unturned to be focused, and will steal your mouse.
+
+Press Win+S to start
+Press Win+R to reload
+Press Win+P to pause
+
+If you get too many false positives try fishing from an angle
+that creates bigger contrast between water and fishing rod color.
