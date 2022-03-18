@@ -1,6 +1,6 @@
 Autofisher for Unturned.
 
-Only tested on arid, but should work on all maps.
+Only works on arid. Working on version that works for all maps.
 Does require Unturned to be focused, and will steal your mouse.
 
 Press Win+S to start
